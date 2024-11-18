@@ -12,7 +12,7 @@ import sys, os, getopt, re
 from functools import wraps
 from glob import glob
 
-
+#finds the hamming distance of two strings s and t (hamming distance is the number of places in which the two characters differ)
 def hamming(s,t):
     return sum(1 for x,y in zip(s,t) if x != y)
 
