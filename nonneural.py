@@ -86,6 +86,8 @@ def memolrec(func):
 
 def alignprs(lemma, form):
     """Break lemma/form into three parts:
+    #breaks based on leading and trailing '_', doesn't take into account different characters
+    #ex. ('', 'demonstrate', '__', '', 'demonstrati', 'on')
     IN:  1 | 2 | 3
     OUT: 4 | 5 | 6
     1/4 are assumed to be prefixes, 2/5 the stem, and 3/6 a suffix.
