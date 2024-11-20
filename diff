@@ -1,0 +1,448 @@
+22,23c22,23
+< afrancesar	V;IMP;ACC(1,SG);NOM(INFM,2,SG)	afrancésame
+< afrancesar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	afrancésalas
+---
+> afrancesar	V;IMP;ACC(1,SG);NOM(INFM,2,SG)	afrancesame
+> afrancesar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	afrancesalas
+25,28c25,28
+< afrancesar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	afrancésese
+< afrancesar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	afrancésala
+< afrancesar	V;IMP;DAT(1,SG);NOM(FORM,2,PL)	afrancésenme
+< afrancesar	V;IMP;DAT(3,SG);NOM(FORM,2,SG)	afrancésese
+---
+> afrancesar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	afrancesese
+> afrancesar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	afrancesala
+> afrancesar	V;IMP;DAT(1,SG);NOM(FORM,2,PL)	afrancesenme
+> afrancesar	V;IMP;DAT(3,SG);NOM(FORM,2,SG)	afrancesese
+63c63
+< aplaudir	V;IMP;ACC(3,PL);NOM(1,PL)	aplaudámoslas
+---
+> aplaudir	V;IMP;ACC(3,PL);NOM(1,PL)	aplaudyámoslas
+65,66c65,66
+< aplaudir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	apláudase
+< aplaudir	V;IMP;DAT(1,PL);NOM(INFM,2,SG)	apláudenos
+---
+> aplaudir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	aplaudase
+> aplaudir	V;IMP;DAT(1,PL);NOM(INFM,2,SG)	aplaudenos
+68c68
+< aplaudir	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	apláudales
+---
+> aplaudir	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	aplaudales
+81c81
+< argumentar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	arguméntenme
+---
+> argumentar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	argumentenme
+85c85
+< argumentar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	arguméntenos
+---
+> argumentar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	argumentenos
+88c88
+< argumentar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	arguméntale
+---
+> argumentar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	argumiéntale
+90c90
+< argumentar	V;IND;PRS;NOM(1,SG)	argumento
+---
+> argumentar	V;IND;PRS;NOM(1,SG)	argumiento
+123,124c123,124
+< calefactar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	calefáctalas
+< calefactar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	calefáctennos
+---
+> calefactar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	calefactalas
+> calefactar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	calefactennos
+126c126
+< calefactar	V;IMP;DAT(3,PL);NOM(FORM,2,PL)	calefáctense
+---
+> calefactar	V;IMP;DAT(3,PL);NOM(FORM,2,PL)	calefactense
+143,144c143,144
+< cancelar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	cancélenme
+< cancelar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	cancélate
+---
+> cancelar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	cancelenme
+> cancelar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	cancelate
+147c147
+< cancelar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	cancélame
+---
+> cancelar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	cancelame
+163,164c163,164
+< celebrar	V;IMP;ACC(3,PL);NOM(FORM,2,SG)	celébrelas
+< celebrar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	celébralas
+---
+> celebrar	V;IMP;ACC(3,PL);NOM(FORM,2,SG)	celebrelas
+> celebrar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	celebralas
+166c166
+< celebrar	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	celébrales
+---
+> celebrar	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	celebrales
+225c225
+< decorar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	decórenos
+---
+> decorar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	decorenos
+227c227
+< decorar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	decórate
+---
+> decorar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	decorate
+246c246
+< depauperar	V;IMP;DAT(3,PL);NOM(FORM,2,PL)	depaupérense
+---
+> depauperar	V;IMP;DAT(3,PL);NOM(FORM,2,PL)	depauperense
+265c265
+< desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
+---
+> desencerrar	V;IND;PRS;NOM(1,SG)	desencerro
+267c267
+< desencerrar	V;IND;PRS;NOM(3,PL)	desencierran
+---
+> desencerrar	V;IND;PRS;NOM(3,PL)	desencerran
+273c273
+< desencerrar	V;NEG;IMP;NOM(2,SG,INFM)	no desencierres
+---
+> desencerrar	V;NEG;IMP;NOM(2,SG,INFM)	no desencerres
+275,276c275,276
+< desencerrar	V;POS;IMP;NOM(2,PL,FORM)	desencierren
+< desencerrar	V;POS;IMP;NOM(2,SG,FORM)	desencierre
+---
+> desencerrar	V;POS;IMP;NOM(2,PL,FORM)	desencerren
+> desencerrar	V;POS;IMP;NOM(2,SG,FORM)	desencerre
+281c281
+< desplumar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	desplúmenos
+---
+> desplumar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	desplumenos
+283,284c283,284
+< desplumar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	desplúmanos
+< desplumar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	desplúmenme
+---
+> desplumar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	desplumanos
+> desplumar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	desplumenme
+286c286
+< desplumar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	desplúmame
+---
+> desplumar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	desplumame
+292c292
+< desplumar	V;NEG;IMP;NOM(2,SG,FORM)	no desplume
+---
+> desplumar	V;NEG;IMP;NOM(2,SG,FORM)	no desplúme
+296c296
+< desplumar	V;SBJV;PRS;NOM(1,SG)	desplume
+---
+> desplumar	V;SBJV;PRS;NOM(1,SG)	desplúme
+304c304
+< dispertar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	dispiértenos
+---
+> dispertar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	dispértenos
+306,307c306,307
+< dispertar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	dispiértennos
+< dispertar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	dispiérteme
+---
+> dispertar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	dispertennos
+> dispertar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	disperteme
+311c311
+< dispertar	V;NEG;IMP;NOM(2,PL,FORM)	no dispierten
+---
+> dispertar	V;NEG;IMP;NOM(2,PL,FORM)	no disperten
+315c315
+< dispertar	V;SBJV;PRS;NOM(3,SG)	dispierte
+---
+> dispertar	V;SBJV;PRS;NOM(3,SG)	disperte
+323c323
+< elevar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	elévenos
+---
+> elevar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	elevenos
+327c327
+< elevar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	elévenos
+---
+> elevar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	elevenos
+329c329
+< elevar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	elévale
+---
+> elevar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	elevale
+383c383
+< enyesar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	enyésenme
+---
+> enyesar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	enyesenme
+386c386
+< enyesar	V;IMP;ACC(3,PL);NOM(FORM,2,PL)	enyésense
+---
+> enyesar	V;IMP;ACC(3,PL);NOM(FORM,2,PL)	enyesense
+388c388
+< enyesar	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	enyésales
+---
+> enyesar	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	enyesales
+402c402
+< escoltar	V;IMP;ACC(1,SG);NOM(INFM,2,SG)	escóltame
+---
+> escoltar	V;IMP;ACC(1,SG);NOM(INFM,2,SG)	escoltame
+404,407c404,407
+< escoltar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	escóltate
+< escoltar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	escóltese
+< escoltar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	escólteme
+< escoltar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	escólteles
+---
+> escoltar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	escoltate
+> escoltar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	escoltese
+> escoltar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	escolteme
+> escoltar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	escolteles
+443c443
+< exceptuar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	exceptúala
+---
+> exceptuar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	exceptuala
+445,446c445,446
+< exceptuar	V;IMP;DAT(1,SG);NOM(FORM,2,PL)	exceptúenme
+< exceptuar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	exceptúame
+---
+> exceptuar	V;IMP;DAT(1,SG);NOM(FORM,2,PL)	exceptuenme
+> exceptuar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	exceptuame
+451c451
+< exceptuar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	exceptúale
+---
+> exceptuar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	exceptuale
+454c454
+< exceptuar	V;NEG;IMP;NOM(2,SG,INFM)	no exceptúes
+---
+> exceptuar	V;NEG;IMP;NOM(2,SG,INFM)	no exceptues
+459c459
+< exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptúe
+---
+> exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptue
+486,489c486,489
+< fichar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	fíchenos
+< fichar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	fíchenme
+< fichar	V;IMP;ACC(1,SG);NOM(FORM,2,SG)	fícheme
+< fichar	V;IMP;DAT(1,SG);NOM(FORM,2,PL)	fíchenme
+---
+> fichar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	fichenos
+> fichar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	fichenme
+> fichar	V;IMP;ACC(1,SG);NOM(FORM,2,SG)	ficheme
+> fichar	V;IMP;DAT(1,SG);NOM(FORM,2,PL)	fichenme
+492,493c492,493
+< fichar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	fíchate
+< fichar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	fícheles
+---
+> fichar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	fichate
+> fichar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	ficheles
+605c605
+< meditar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	medítese
+---
+> meditar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	meditese
+624c624
+< membretar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	membrétese
+---
+> membretar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	membretese
+626,627c626,627
+< membretar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	membrétate
+< membretar	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	membrétenle
+---
+> membretar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	membretate
+> membretar	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	membretenle
+643c643
+< minger	V;IND;FUT;NOM(1,SG)	mingeré
+---
+> minger	V;IND;FUT;NOM(1,SG)	mingdré
+651,653c651,653
+< minger	V;NEG;IMP;NOM(2,PL,FORM)	no minjan
+< minger	V;NEG;IMP;NOM(2,SG,FORM)	no minja
+< minger	V;POS;IMP;NOM(1,PL)	minjamos
+---
+> minger	V;NEG;IMP;NOM(2,PL,FORM)	no mingan
+> minger	V;NEG;IMP;NOM(2,SG,FORM)	no minga
+> minger	V;POS;IMP;NOM(1,PL)	mingamos
+656c656
+< minger	V;SBJV;PRS;NOM(2,PL)	minjáis
+---
+> minger	V;SBJV;PRS;NOM(2,PL)	mingáis
+664c664
+< mocar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	mócala
+---
+> mocar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	mocala
+704c704
+< palpitar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	palpítese
+---
+> palpitar	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	palpitese
+724c724
+< pialar	V;IMP;ACC(3,PL);NOM(FORM,2,SG)	piálelas
+---
+> pialar	V;IMP;ACC(3,PL);NOM(FORM,2,SG)	pialelas
+727c727
+< pialar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	piáleles
+---
+> pialar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	pialeles
+742c742
+< prostituir	V;IMP;ACC(1,PL);NOM(1,PL)	prostituyámonos
+---
+> prostituir	V;IMP;ACC(1,PL);NOM(1,PL)	prostitámonos
+745c745
+< prostituir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	prostitúyase
+---
+> prostituir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	prostituase
+747,748c747,748
+< prostituir	V;IMP;DAT(2,SG);NOM(1,PL)	prostituyámoste
+< prostituir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	prostitúyeles
+---
+> prostituir	V;IMP;DAT(2,SG);NOM(1,PL)	prostituámoste
+> prostituir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	prostitueles
+756,760c756,760
+< prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostituyás
+< prostituir	V;SBJV;PRS;NOM(3,PL)	prostituyan
+< prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituyese
+< prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituyese
+< prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituyéndose
+---
+> prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostitás
+> prostituir	V;SBJV;PRS;NOM(3,PL)	prostitan
+> prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituiese
+> prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
+> prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
+763c763
+< reactivar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	reactívanos
+---
+> reactivar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	reactivanos
+822c822
+< reintegrar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	reintégranos
+---
+> reintegrar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	reintegranos
+825c825
+< reintegrar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	reintégrame
+---
+> reintegrar	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	reintegrame
+827c827
+< reintegrar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	reintégrate
+---
+> reintegrar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	reintegrate
+862c862
+< seducir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	sedúzcase
+---
+> seducir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	seducase
+864,865c864,865
+< seducir	V;IMP;DAT(3,SG);NOM(1,PL)	seduzcámosle
+< seducir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	sedúcele
+---
+> seducir	V;IMP;DAT(3,SG);NOM(1,PL)	seducámosle
+> seducir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	seducele
+867c867
+< seducir	V;IND;PRS;NOM(1,SG)	seduzco
+---
+> seducir	V;IND;PRS;NOM(1,SG)	seduco
+870c870
+< seducir	V;IND;PST;PFV;NOM(1,PL)	sedujimos
+---
+> seducir	V;IND;PST;PFV;NOM(1,PL)	seducimos
+873,876c873,876
+< seducir	V;POS;IMP;NOM(1,PL)	seduzcamos
+< seducir	V;SBJV;FUT;NOM(3,PL)	sedujeren
+< seducir	V;SBJV;PRS;NOM(3,PL)	seduzcan
+< seducir	V;SBJV;PRS;NOM(3,SG)	seduzca
+---
+> seducir	V;POS;IMP;NOM(1,PL)	sedugamos
+> seducir	V;SBJV;FUT;NOM(3,PL)	seducieren
+> seducir	V;SBJV;PRS;NOM(3,PL)	seducan
+> seducir	V;SBJV;PRS;NOM(3,SG)	seduiga
+879,880c879,880
+< seducir	V;V.PTCP;PST;MASC;PL	seducidos
+< seducir	V;V.PTCP;PST;MASC;SG	seducido
+---
+> seducir	V;V.PTCP;PST;MASC;PL	seduchos
+> seducir	V;V.PTCP;PST;MASC;SG	seducho
+883,885c883,885
+< sobredorar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	sobredórate
+< sobredorar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	sobredóralas
+< sobredorar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	sobredóreme
+---
+> sobredorar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	sobredorate
+> sobredorar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	sobredoralas
+> sobredorar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	sobredoreme
+921,927c921,927
+< sonreír	V;COND;NOM(3,PL)	sonreirían
+< sonreír	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	sonríenos
+< sonreír	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	sonríase
+< sonreír	V;IMP;DAT(1,PL);NOM(1,PL)	sonriámonos
+< sonreír	V;IMP;DAT(2,PL);NOM(1,PL)	sonriámoos
+< sonreír	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	sonríeles
+< sonreír	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	sonríanle
+---
+> sonreír	V;COND;NOM(3,PL)	sonreírían
+> sonreír	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	sonreínos
+> sonreír	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	sonreíse
+> sonreír	V;IMP;DAT(1,PL);NOM(1,PL)	sonreíos
+> sonreír	V;IMP;DAT(2,PL);NOM(1,PL)	sonreíos
+> sonreír	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	sonreíles
+> sonreír	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	sonreínle
+929,930c929,930
+< sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreíamos
+< sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonrió
+---
+> sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreímos
+> sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonreí
+934,940c934,940
+< sonreír	V;POS;IMP;NOM(1,PL)	sonriamos
+< sonreír	V;SBJV;FUT;NOM(3,PL)	sonrieren
+< sonreír	V;SBJV;PRS;NOM(2,PL)	sonriáis
+< sonreír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	sonrieras
+< sonreír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	sonriésemos
+< sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonriese
+< sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonriese
+---
+> sonreír	V;POS;IMP;NOM(1,PL)	sonreímos
+> sonreír	V;SBJV;FUT;NOM(3,PL)	sonreíren
+> sonreír	V;SBJV;PRS;NOM(2,PL)	sonreíis
+> sonreír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	sonreíras
+> sonreír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	sonreímos
+> sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonreíse
+> sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonreíse
+943c943
+< subscribir	V;IMP;ACC(1,SG);NOM(FORM,2,SG)	subscríbame
+---
+> subscribir	V;IMP;ACC(1,SG);NOM(FORM,2,SG)	subscribame
+945,946c945,946
+< subscribir	V;IMP;ACC(3,PL);NOM(1,PL)	subscribámoslas
+< subscribir	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	subscríbannos
+---
+> subscribir	V;IMP;ACC(3,PL);NOM(1,PL)	subscribyámoslas
+> subscribir	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	subscribannos
+949c949
+< subscribir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	subscríbele
+---
+> subscribir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	subscribele
+960c960
+< subscribir	V;V.PTCP;PST;FEM;PL	subscriptas
+---
+> subscribir	V;V.PTCP;PST;FEM;PL	subscribidas
+963c963
+< suplir	V;IMP;ACC(1,PL);NOM(FORM,2,PL)	súplannos
+---
+> suplir	V;IMP;ACC(1,PL);NOM(FORM,2,PL)	suplannos
+965c965
+< suplir	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	súplelas
+---
+> suplir	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	suplelas
+967,968c967,968
+< suplir	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	súplannos
+< suplir	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	súpleme
+---
+> suplir	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	suplannos
+> suplir	V;IMP;DAT(1,SG);NOM(INFM,2,SG)	supleme
+970,971c970,971
+< suplir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	súpleles
+< suplir	V;IMP;DAT(3,SG);NOM(FORM,2,SG)	súplase
+---
+> suplir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	supleles
+> suplir	V;IMP;DAT(3,SG);NOM(FORM,2,SG)	suplase
+977c977
+< suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	supliésemos
+---
+> suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	suplésemos
+979c979
+< suplir	V;V.CVB;PRS;ACC(2,SG)	supliéndote
+---
+> suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
+985,989c985,989
+< vendar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	véndala
+< vendar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	véndennos
+< vendar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	véndenos
+< vendar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	véndeles
+< vendar	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	véndenle
+---
+> vendar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	vendala
+> vendar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	vendnos
+> vendar	V;IMP;DAT(1,PL);NOM(FORM,2,SG)	vendenos
+> vendar	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	vendeles
+> vendar	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	vendenle
