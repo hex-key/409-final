@@ -12,7 +12,11 @@ import sys, os, getopt, re
 from functools import wraps
 from glob import glob
 
-#finds the hamming distance of two strings s and t (hamming distance is the number of places in which the two characters differ)
+#finds the hamming distance of two strings s and t 
+#hamming distance is the number of places in which the two characters differ
+#counts default starting from word initial and disregards any trailing characters that don't have corresponding place in the other word
+#(so max possible value is the len of shorter word)
+#ex. "alone" and "lone" has a distance of 4 /// "app" and "appendix" 0 ///
 def hamming(s,t):
     return sum(1 for x,y in zip(s,t) if x != y)
 
