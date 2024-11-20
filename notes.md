@@ -33,3 +33,20 @@ base code for model (description on page 6 of https://aclanthology.org/2023.sigm
 - Generation: given lemma and features, applies rules associated with those features. No generalization.
 
 -- Specifically, uses longest-matching suffix rule 
+
+
+
+
+## diff file format
+
+command: diff ./data/spa.dev ./data/spa.out > diff vN
+
+format is 
+
+start,end (of lines that were different)
+
+< lines from .dev
+
+---
+
+> lines from .out
