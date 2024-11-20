@@ -138,14 +138,22 @@ def apply_best_rule(lemma, msd, allprules, allsrules):
     if msd not in allprules and msd not in allsrules:
         return lemma # Haven't seen this inflection, so bail out
 
+    # the "best rule" is found by max(applicablerules) where the thing being compared is the max length from rule[2], and the length of x[0] and x[1]. thats kind a wild ngl 
+
     if msd in allsrules:
         applicablerules = [(x[0],x[1],y) for x,y in allsrules[msd].items() if x[0] in base]
+        
         if applicablerules:
             bestrule = max(applicablerules, key = lambda x: (len(x[0]), x[2], len(x[1])))
             base = base.replace(bestrule[0], bestrule[1])
+            # CHANGE
+            if "IMP" in msd:
+                print("bestrule " + bestrule)
 
     if msd in allprules:
         applicablerules = [(x[0],x[1],y) for x,y in allprules[msd].items() if x[0] in base]
+        
+
         if applicablerules:
             bestrule = max(applicablerules, key = lambda x: (x[2]))
             base = base.replace(bestrule[0], bestrule[1])
@@ -192,6 +200,9 @@ def main(argv):
     totalavg, numlang = 0.0, 0
     for lang in [os.path.splitext(d)[0] for d in os.listdir(path) if '.trn' in d]:
         allprules, allsrules = {}, {}
+
+        # RULES dictionaries are of the format
+        # {'set of features': 'base suffix' 'modified suffix' '}
         if not os.path.isfile(path + lang +  ".trn"):
             continue
         lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
