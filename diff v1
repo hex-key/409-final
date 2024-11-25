@@ -1,8 +1,3 @@
-90c90
-< argumentar	V;IND;PRS;NOM(1,SG)	argumento
----
-> argumentar	V;IND;PRS;NOM(1,SG)	argumiento
-
 265c265
 < desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
 ---
@@ -113,6 +108,19 @@
 < suplir	V;V.CVB;PRS;ACC(2,SG)	supliéndote
 ---
 > suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
+
+
+
+
+
+### Defaulting to longer replacement suffix via stem change
+
+
+90c90
+< argumentar	V;IND;PRS;NOM(1,SG)	argumento
+---
+> argumentar	V;IND;PRS;NOM(1,SG)	argumiento
+
 
 
 
