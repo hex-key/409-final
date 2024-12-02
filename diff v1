@@ -83,6 +83,7 @@
 < subscribir	V;V.PTCP;PST;FEM;PL	subscriptas
 ---
 > subscribir	V;V.PTCP;PST;FEM;PL	subscribidas
+## add: reinscribir	V;V.PTCP;PST;FEM;SG	reinscripta
 
 879,880c879,880
 < seducir	V;V.PTCP;PST;MASC;PL	seducidos
@@ -90,7 +91,8 @@
 ---
 > seducir	V;V.PTCP;PST;MASC;PL	seduchos
 > seducir	V;V.PTCP;PST;MASC;SG	seducho
-
+## add: traducir	V;V.PTCP;PST;MASC;PL	traducidos
+## and: traducir	V;V.PTCP;PST;MASC;SG	traducido
 
 
 
@@ -107,7 +109,6 @@
 > prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituiese
 > prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
 > prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
-
 
 
 
