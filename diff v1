@@ -7,20 +7,10 @@
 ---
 > desencerrar	V;IND;PRS;NOM(3,PL)	desencerran
 
-296c296
-< desplumar	V;SBJV;PRS;NOM(1,SG)	desplume
----
-> desplumar	V;SBJV;PRS;NOM(1,SG)	desplúme
-
 315c315
 < dispertar	V;SBJV;PRS;NOM(3,SG)	dispierte
 ---
 > dispertar	V;SBJV;PRS;NOM(3,SG)	disperte
-
-459c459
-< exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptúe
----
-> exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptue
 
 643c643
 < minger	V;IND;FUT;NOM(1,SG)	mingeré
@@ -78,6 +68,7 @@
 ---
 > sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreímos
 > sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonreí
+
 934,940c934,940
 < sonreír	V;POS;IMP;NOM(1,PL)	sonriamos
 < sonreír	V;SBJV;FUT;NOM(3,PL)	sonrieren
@@ -109,6 +100,23 @@
 ---
 > suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
 
+
+
+
+
+
+
+### Missing/Adding accents, otherwise fine
+
+296c296
+< desplumar	V;SBJV;PRS;NOM(1,SG)	desplume
+---
+> desplumar	V;SBJV;PRS;NOM(1,SG)	desplúme
+
+459c459
+< exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptúe
+---
+> exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptue
 
 
 
