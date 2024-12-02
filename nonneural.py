@@ -222,29 +222,12 @@ allprules and allsrules are in this form
 }
 """
 def apply_best_rule(lemma, msd, allprules, allsrules):
-    """Applies rules with special handling for Spanish negative imperatives"""
-    # Special handling for negative imperatives
-    if 'NEG;IMP' in msd:
-        base = lemma
-        if 'FORM' in msd:  # Formal (usted)
-            # Remove -ar and add -e for -ar verbs
-            if base.endswith('ar'):
-                return 'no ' + base[:-2] + 'e'
-            # Remove -er/-ir and add -a for -er/-ir verbs    
-            elif base.endswith(('er', 'ir')):
-                return 'no ' + base[:-2] + 'a'
-        elif 'INFM' in msd:  # Informal (tú)
-            # Remove -ar and add -es for -ar verbs
-            if base.endswith('ar'):
-                return 'no ' + base[:-2] + 'es'
-            # Remove -er/-ir and add -as for -er/-ir verbs
-            elif base.endswith(('er', 'ir')):
-                return 'no ' + base[:-2] + 'as'
     """
     Applies the longest-matching suffix-changing rule given an input
     form and the MSD. Length ties in suffix rules are broken by frequency.
     For prefix-changing rules, only the most frequent rule is chosen.
     """
+
     bestrulelen = 0
     base = "<" + lemma + ">"
     if msd not in allprules and msd not in allsrules:
@@ -273,70 +256,6 @@ def numleadingsyms(s, symbol):
 
 def numtrailingsyms(s, symbol):
     return len(s) - len(s.rstrip(symbol))
-
-def count_syllables(word):
-    """Count syllables in a Spanish word based on vowel sequences"""
-    vowels = 'aeiouáéíóúAEIOUÁÉÍÓÚ'
-    diphthongs = ['ai', 'ei', 'oi', 'ui', 'au', 'eu', 'ou', 
-                  'ia', 'ie', 'io', 'iu', 'ua', 'ue', 'uo']
-    count = 0
-    i = 0
-    while i < len(word):
-        if word[i] in vowels:
-            if i < len(word) - 1 and word[i:i+2].lower() in diphthongs:
-                count += 1
-                i += 2
-            else:
-                count += 1
-                i += 1
-        else:
-            i += 1
-    return count
-
-def has_accent(word):
-    """Check if word already contains any Spanish accent marks"""
-    accent_vowels = 'áéíóú'
-    return any(char in accent_vowels for char in word)
-
-def add_accent_to_third_syllable(word, msd):
-    """Add accent to the third syllable from the end if:
-    1. The word is imperative
-    2. The word doesn't already have an accent mark
-    3. The word is long enough"""
-    
-    if 'IMP' not in msd:  # Only process imperatives
-        return word
-        
-    if has_accent(word):  # Skip if word already has an accent
-        return word
-    
-    vowels = 'aeiouAEIOU'
-    accent_map = {'a': 'á', 'e': 'é', 'i': 'í', 'o': 'ó', 'u': 'ú'}
-    
-    # Count syllables from the end
-    syllables = count_syllables(word)
-    if syllables < 3:  # Word is too short
-        return word
-    
-    # Find the third-to-last vowel
-    vowel_count = 0
-    vowel_positions = []
-    
-    for i, char in enumerate(word):
-        if char in vowels:
-            vowel_count += 1
-            vowel_positions.append(i)
-    
-    if len(vowel_positions) >= 3:
-        # Get the position of the third-to-last vowel
-        target_pos = vowel_positions[-3]
-        # Add accent to that vowel
-        word_list = list(word)
-        if word_list[target_pos] in accent_map:
-            word_list[target_pos] = accent_map[word_list[target_pos]]
-        return ''.join(word_list)
-    
-    return word
 
 ###############################################################################
 
@@ -426,7 +345,6 @@ def main(argv):
         if prefbias > suffbias:
             outform = outform[::-1]
             lemma = lemma[::-1]
-        outform = add_accent_to_third_syllable(outform,msd)
         if outform == correct:
             numcorrect += 1
         numguesses += 1
