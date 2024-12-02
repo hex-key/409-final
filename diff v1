@@ -1,3 +1,5 @@
+### No recognition of internal vowel stem changes or consonant changes that result from vowel changes in the suffix
+
 265c265
 < desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
 ---
@@ -12,28 +14,10 @@
 ---
 > dispertar	V;SBJV;PRS;NOM(3,SG)	disperte
 
-643c643
-< minger	V;IND;FUT;NOM(1,SG)	mingeré
----
-> minger	V;IND;FUT;NOM(1,SG)	mingdré
-
 656c656
 < minger	V;SBJV;PRS;NOM(2,PL)	minjáis
 ---
 > minger	V;SBJV;PRS;NOM(2,PL)	mingáis
-
-756,760c756,760
-< prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostituyás
-< prostituir	V;SBJV;PRS;NOM(3,PL)	prostituyan
-< prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituyese
-< prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituyese
-< prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituyéndose
----
-> prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostitás
-> prostituir	V;SBJV;PRS;NOM(3,PL)	prostitan
-> prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituiese
-> prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
-> prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
 
 867c867
 < seducir	V;IND;PRS;NOM(1,SG)	seduzco
@@ -55,12 +39,6 @@
 > seducir	V;SBJV;FUT;NOM(3,PL)	seducieren
 > seducir	V;SBJV;PRS;NOM(3,PL)	seducan
 > seducir	V;SBJV;PRS;NOM(3,SG)	seduiga
-879,880c879,880
-< seducir	V;V.PTCP;PST;MASC;PL	seducidos
-< seducir	V;V.PTCP;PST;MASC;SG	seducido
----
-> seducir	V;V.PTCP;PST;MASC;PL	seduchos
-> seducir	V;V.PTCP;PST;MASC;SG	seducho
 
 929,930c929,930
 < sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreíamos
@@ -86,11 +64,6 @@
 > sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonreíse
 > sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonreíse
 
-960c960
-< subscribir	V;V.PTCP;PST;FEM;PL	subscriptas
----
-> subscribir	V;V.PTCP;PST;FEM;PL	subscribidas
-
 977c977
 < suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	supliésemos
 ---
@@ -101,6 +74,39 @@
 > suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
 
 
+
+
+
+### the corresponding "special verb type" didn't have the specific rule, 
+### so not generalized and it went with the non-irregular rule with a shorter matching suffix
+960c960 
+< subscribir	V;V.PTCP;PST;FEM;PL	subscriptas
+---
+> subscribir	V;V.PTCP;PST;FEM;PL	subscribidas
+
+879,880c879,880
+< seducir	V;V.PTCP;PST;MASC;PL	seducidos
+< seducir	V;V.PTCP;PST;MASC;SG	seducido
+---
+> seducir	V;V.PTCP;PST;MASC;PL	seduchos
+> seducir	V;V.PTCP;PST;MASC;SG	seducho
+
+
+
+
+### Overpowered by frequency of verbs ending -guir (which don't do the 'y' change)
+756,760c756,760
+< prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostituyás
+< prostituir	V;SBJV;PRS;NOM(3,PL)	prostituyan
+< prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituyese
+< prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituyese
+< prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituyéndose
+---
+> prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostitás
+> prostituir	V;SBJV;PRS;NOM(3,PL)	prostitan
+> prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituiese
+> prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
+> prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
 
 
 
@@ -121,13 +127,17 @@
 
 
 
-### Defaulting to longer replacement suffix via stem change
-
+### Defaulting to longer replacement suffix
 
 90c90
 < argumentar	V;IND;PRS;NOM(1,SG)	argumento
 ---
 > argumentar	V;IND;PRS;NOM(1,SG)	argumiento
+
+643c643
+< minger	V;IND;FUT;NOM(1,SG)	mingeré
+---
+> minger	V;IND;FUT;NOM(1,SG)	mingdré
 
 
 
