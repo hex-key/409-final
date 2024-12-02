@@ -302,11 +302,13 @@ def add_accent_to_third_syllable(word, msd):
     """Add accent to the third syllable from the end if:
     1. The word is imperative
     2. The word doesn't already have an accent mark
-    3. The word is long enough"""
+    3. The word is long enough
+    4. The word is not negative"""
     
     if 'IMP' not in msd:  # Only process imperatives
         return word
-        
+    if 'NEG' not in msd:  # Don't process negatives
+        return word
     if has_accent(word):  # Skip if word already has an accent
         return word
     
