@@ -1,5 +1,31 @@
 ### No recognition of internal vowel stem changes or consonant changes that result from vowel changes in the suffix
 ## sonreír is especially weird cause of the accent mark, there may be a pattern with these kinds of verbs
+## ^^^^ training data doesn't have any -ír ending verbs, so the only rules/longest matching rules it has to go off are -r
+## adding desleír paradigm fixes it:
+desleír	V;COND;NOM(3,PL)	desleirían
+desleír	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	deslíenos
+desleír	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	deslíase
+desleír	V;IMP;DAT(1,PL);NOM(1,PL)	desliámonos
+desleír	V;IMP;DAT(2,PL);NOM(1,PL)	desliámoos
+desleír	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	deslíeles
+desleír	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	deslíanle
+desleír	V;IND;PRS;NOM(1,PL)	desleímos
+desleír	V;IND;PST;IPFV;NOM(1,PL)	desleíamos
+desleír	V;IND;PST;PFV;NOM(2,SG,FORM)	deslió
+desleír	V;NFIN;DAT(1,PL)	desleírnos
+desleír	V;NFIN;DAT(2,SG)	desleírte
+desleír	V;NFIN;DAT(3,PL)	desleírse
+desleír	V;POS;IMP;NOM(1,PL)	desliamos
+desleír	V;SBJV;FUT;NOM(3,PL)	deslieren
+desleír	V;SBJV;PRS;NOM(2,PL)	desliáis
+desleír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	deslieras
+desleír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	desliésemos
+desleír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	desliese
+desleír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	desliese
+
+
+
+
 
 265c265
 < desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
@@ -111,7 +137,13 @@
 > prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
 > prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
 
-
+### if there was just one more instant of "normal" -uir endings, then the predictions for these come out correct
+## tested by adding these (not full paradigm for the verb!):
+constituir	V;SBJV;PRS;NOM(2,SG,INFM)	constituyás
+constituir	V;SBJV;PRS;NOM(3,PL)	constituyan
+constituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	constituyese
+constituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	constituyese
+constituir	V;V.CVB;PRS;ACC(3,PL)	constituyéndose
 
 
 ### Missing/Adding accents, otherwise fine
