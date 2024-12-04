@@ -12,70 +12,134 @@ import sys, os, getopt, re
 from functools import wraps
 from glob import glob
 
-#finds the hamming distance of two strings s and t 
-#hamming distance is the number of places in which the two characters differ
-#counts default starting from word initial and disregards any trailing characters that don't have corresponding place in the other word
-#(so max possible value is the len of shorter word)
-#ex. "alone" and "lone" has a distance of 4 /// "app" and "appendix" 0 ///
+"""
+Finds the Hamming distance of two strings s and t (number of places where the two characters differ)
+unts default starting from word initial and disregards any trailing characters that don't have corresponding place in the other word (so max possible value is the len of shorter word)
+ex. "alone" and "lone" has a distance of 4 /// "app" and "appendix" 0 ///
+"""
 def hamming(s,t):
     return sum(1 for x,y in zip(s,t) if x != y)
 
 
+"""
+Code tries different alignment positions and returns the best one
+
+Example: s = BCD, t = ABCDE, it will try
+(lpad part)
+BCD_____    _BCD____    __BCD___    etc.
+___ABCDE    ___ABCDE    ___ABCDE
+
+then (rpad part)
+_____BCD    _____BCD    _____BCD    etc.
+___ABCDE    __ABCDE_    _ABCDE__  
+
+then at the end it will (i think) end up with 
+bs = ____BCD_
+bt = ___ABCDE
+
+then s_pad and t_pad are trimmed versions (itll remove the trailing whitespace at the beginning)
+so output = _BCD_, ABCDE (as expected)
+
+used in the code as halign(lemma, form)
+"""
 def halign(s,t):
-    """Align two strings by Hamming distance."""
-    slen = len(s)
-    tlen = len(t)
-    minscore = len(s) + len(t) + 1
-    for upad in range(0, len(t)+1):
-        upper = '_' * upad + s + (len(t) - upad) * '_'
-        lower = len(s) * '_' + t
-        score = hamming(upper, lower)
+    """Align two strings (s and t) by Hamming distance."""
+    slen, tlen = len(s), len(t)
+    bs = bt = "" # best s and t
+    minscore = slen + tlen + 1 # start with the worst possible score
+
+    # try increasing amounts of left-padding for s
+    for lpad in range(0, tlen+1):
+        s_padded = '_' * lpad + s + (tlen - lpad) * '_'
+        t_padded = slen * '_' + t
+        score = hamming(s_padded, t_padded)
         if score < minscore:
-            bu = upper
-            bl = lower
+            bs, bt = s_padded, t_padded
             minscore = score
 
-    for lpad in range(0, len(s)+1):
-        upper = len(t) * '_' + s
-        lower = (len(s) - lpad) * '_' + t + '_' * lpad
-        score = hamming(upper, lower)
+    # try increasing amounts of right-padding for t
+    for rpad in range(0, slen+1):
+        s_padded = tlen * '_' + s
+        t_padded = (slen - rpad) * '_' + t + '_' * rpad
+        score = hamming(s_padded, t_padded)
         if score < minscore:
-            bu = upper
-            bl = lower
+            bs, bt = s_padded, t_padded
             minscore = score
 
-    zipped = list(zip(bu,bl))
-    newin  = ''.join(i for i,o in zipped if i != '_' or o != '_')
-    newout = ''.join(o for i,o in zipped if i != '_' or o != '_')
-    return newin, newout
+    # trim whitespaces if they're whitespace in both bs and bt
+    zipped = list(zip(bs,bt))
+    s_pad  = ''.join(s_ch for s_ch, t_ch in zipped if s_ch != '_' or t_ch != '_')
+    t_pad = ''.join(t_ch for s_ch, t_ch in zipped if s_ch != '_' or t_ch != '_')
+    return s_pad, t_pad
+
+# understanding newin & newout syntax:
+    # str.join() method concatenates elements of an iterable---in this case, a list---into a single string
+    # ''.join(...) means that the characters generated will be concatenated without any separator.
+    # LOGIC:
+        #for each (i, o) in zipped:  
+            #if i is not equal to '_' OR o is not equal to '_':  
+                #newin = newin + i  
+                #newout = newout + o 
 
 
-def levenshtein(s, t, inscost = 1.0, delcost = 1.0, substcost = 1.0):
-    """Recursive implementation of Levenshtein, with alignments returned."""
+def levenshtein(s, t, inscost = 1.0, delcost = 1.0, substcost = 1.0): #takes strings s and t, and initializes manipulation costs
+    """ Calculates the levenshtein distance between two strings, returning the aligned representations with underscores. 
+      The levenshtein distance considers insertions, deletions, and substitutions. 
+      
+      An inner function, lrec, tracks the alignment using variables for past and remaining characters, as well as the total cost of all manipulations. 
+      
+      The function returns the aligned version of both strings as well as the total edit distance. """
+    
     @memolrec
-    def lrec(spast, tpast, srem, trem, cost):
+    
+    #internal function, takes params:
+        #spast & tpast = aligned portions of the strings at the current point
+        #srem & trem = the remaining unaligned portions of the strings at the current point
+
+    def lrec(spast, tpast, srem, trem, cost): 
+       
+        # if the remaining part of s is empty,
+            # align the remaining part of t by padding spast with underscores and adding the remaining characters of t to tpast.
+            # and add the length of trem to cost.
         if len(srem) == 0:
             return spast + len(trem) * '_', tpast + trem, '', '', cost + len(trem)
+        
+        # if the remaining part of t is empty,
+            # align the remaining part of s by padding tpast with underscores and adding the remaining characters of s to spast.
+            # and add the length of srem to cost.
         if len(trem) == 0:
             return spast + srem, tpast + len(srem) * '_', '', '', cost + len(srem)
 
         addcost = 0
+        # if the current remaining first characters of s and t are different,
+            # there is a cost to substitute them
         if srem[0] != trem[0]:
             addcost = substcost
 
+        # the function considers all possible edits of substitutions, insertions, and deletions. It compares their costs and returns the tuple with the smallest cost value.
         return min((lrec(spast + srem[0], tpast + trem[0], srem[1:], trem[1:], cost + addcost),
                    lrec(spast + '_', tpast + trem[0], srem, trem[1:], cost + inscost),
                    lrec(spast + srem[0], tpast + '_', srem[1:], trem, cost + delcost)),
                    key = lambda x: x[4])
-
+    
+    # the main function calls lrec with empty strings as spast and t as tpast (they haven't been traversed yet)
+    # s as srem, t as trem
+    # and initial cost of 0
     answer = lrec('', '', s, t, 0)
+    
+    # from the minimum cost tuple returned by lrec, it returns the 0th, 1st, and 4th index of the tuple. 
+    # or, the aligned version of s, aligned version of t, and the total cost.n
     return answer[0],answer[1],answer[4]
 
-
 def memolrec(func):
-    """Memoizer for Levenshtein."""
+    """Memoizer for Levenshtein. This is used to cache results of recursive subproblems from the levenshtein method. 
+    If a pair of remaining s and t strings is not in the cache already, call the levenshtein function and store the result
+    after trimming unnecessary parts of sp and tp."""
     cache = {}
     @wraps(func)
+    # sp & tp = already aligned string portions
+    # sr & tr = remaining unaligned string portions
+    # cost = total cost so far
     def wrap(sp, tp, sr, tr, cost):
         if (sr,tr) not in cache:
             res = func(sp, tp, sr, tr, cost)
@@ -84,10 +148,14 @@ def memolrec(func):
     return wrap
 
 
+"""
+Used in prefix_suffix_rules_get
+"""
 def alignprs(lemma, form):
-    """Break lemma/form into three parts:
-    #breaks based on leading and trailing '_', doesn't take into account different characters
-    #ex. ('', 'demonstrate', '__', '', 'demonstrati', 'on')
+    """
+    Break lemma/form into three parts:
+    based on leading and trailing '_', doesn't take into account different characters
+    ex. ('', 'demonstrate', '__', '', 'demonstrati', 'on')
     IN:  1 | 2 | 3
     OUT: 4 | 5 | 6
     1/4 are assumed to be prefixes, 2/5 the stem, and 3/6 a suffix.
@@ -102,36 +170,63 @@ def alignprs(lemma, form):
     tspace = max(len(alemma[::-1]) - len(alemma[::-1].lstrip('_')), len(aform[::-1]) - len(aform[::-1].lstrip('_')))
     return alemma[0:lspace], alemma[lspace:len(alemma)-tspace], alemma[len(alemma)-tspace:], aform[0:lspace], aform[lspace:len(alemma)-tspace], aform[len(alemma)-tspace:]
 
+"""
+gets input from alignprs which means padded based on levenshtein distance and ignoring substitutions
+    ex. ('', 'demonstrate', '__', '', 'demonstrati', 'on')
 
+example for ^: 
+
+lem_rs =  demonstrate__>
+form_rs = demonstration>
+
+s_rules = {(demonstrate__>, demonstration>)
+           (emonstrate__>, emonstration>)
+           (monstrate__>, monstration>)
+           etc. }
+and then it trims all the underscores 
+
+"""
 def prefix_suffix_rules_get(lemma, form):
-    """Extract a number of suffix-change and prefix-change rules
-    based on a given example lemma+inflected form."""
-    lp,lr,ls,fp,fr,fs = alignprs(lemma, form) # Get six parts, three for in three for out
+    """Extract a number of suffix-change and prefix-change rules based on a given example lemma + inflected form."""
+    lp,lr,ls,fp,fr,fs = alignprs(lemma, form)  # lemma prefix/root/suffix, form prefix/root/suffix
 
-    # Suffix rules
-    ins  = lr + ls + ">"
-    outs = fr + fs + ">"
-    srules = set()
-    for i in range(min(len(ins), len(outs))):
-        srules.add((ins[i:], outs[i:]))
-    srules = {(x[0].replace('_',''), x[1].replace('_','')) for x in srules}
+    def make_rules(l, f):
+        rules = set()
+        for i in range(min(len(l), len(f))):
+            rules.add((l[i:], f[i:]))
+        rules = {(x[0].replace('_',''), x[1].replace('_','')) for x in rules}
+        return rules
+
+    # Suffix rules (using root+suffix) 
+    lem_rs  = lr + ls + ">"
+    form_rs = fr + fs + ">"
+    srules = make_rules(lem_rs, form_rs)
 
     # Prefix rules
     prules = set()
-    if len(lp) >= 0 or len(fp) >= 0:
-        inp = "<" + lp
-        outp = "<" + fp
-        for i in range(0,len(fr)):
-            prules.add((inp + fr[:i],outp + fr[:i]))
-            prules = {(x[0].replace('_',''), x[1].replace('_','')) for x in prules}
+    if len(lp) + len(fp) >= 0: # if there is any prefix rule
+        lem_p = "<" + lp
+        form_p = "<" + fp
+        prules = make_rules(lem_p, form_p)
 
     return prules, srules
 
+"""
+allprules and allsrules are in this form
+{
+    "msd" : {
+        ("rule-in", "rule-out"): frequency
+    },
 
+    [etc etc for different msd-s]
+}
+"""
 def apply_best_rule(lemma, msd, allprules, allsrules):
-    """Applies the longest-matching suffix-changing rule given an input
+    """
+    Applies the longest-matching suffix-changing rule given an input
     form and the MSD. Length ties in suffix rules are broken by frequency.
-    For prefix-changing rules, only the most frequent rule is chosen."""
+    For prefix-changing rules, only the most frequent rule is chosen.
+    """
 
     bestrulelen = 0
     base = "<" + lemma + ">"
@@ -174,8 +269,8 @@ def numtrailingsyms(s, symbol):
 
 
 def main(argv):
-    options, remainder = getopt.gnu_getopt(argv[1:], 'ohp:', ['output','help','path='])
-    TEST, OUTPUT, HELP, path = False,False, False, './data/'
+    options, _ = getopt.gnu_getopt(argv[1:], 'ohp:', ['output','help','path='])
+    TEST, OUTPUT, HELP, path = False, False, False, './data/'
     for opt, arg in options:
         if opt in ('-o', '--output'):
             OUTPUT = True
@@ -198,6 +293,7 @@ def main(argv):
             quit()
 
     totalavg, numlang = 0.0, 0
+<<<<<<< HEAD
     for lang in [os.path.splitext(d)[0] for d in os.listdir(path) if '.trn' in d]:
         allprules, allsrules = {}, {}
 
@@ -206,72 +302,81 @@ def main(argv):
         if not os.path.isfile(path + lang +  ".trn"):
             continue
         lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
+=======
+    lang = "spa"
+    
+    allprules, allsrules = {}, {}
+>>>>>>> master
 
-        # First, test if language is predominantly suffixing or prefixing
-        # If prefixing, work with reversed strings
-        prefbias, suffbias = 0,0
-        for l in lines:
-            lemma, _, form = l.split(u'\t')
-            aligned = halign(lemma, form)
-            if ' ' not in aligned[0] and ' ' not in aligned[1] and '-' not in aligned[0] and '-' not in aligned[1]:
-                prefbias += numleadingsyms(aligned[0],'_') + numleadingsyms(aligned[1],'_')
-                suffbias += numtrailingsyms(aligned[0],'_') + numtrailingsyms(aligned[1],'_')
-        for l in lines: # Read in lines and extract transformation rules from pairs
-            lemma, msd, form = l.split(u'\t')
-            if prefbias > suffbias:
-                lemma = lemma[::-1]
-                form = form[::-1]
-            prules, srules = prefix_suffix_rules_get(lemma, form)
+    lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
 
-            if msd not in allprules and len(prules) > 0:
-                allprules[msd] = {}
-            if msd not in allsrules and len(srules) > 0:
-                allsrules[msd] = {}
+    # First, test if language is predominantly suffixing or prefixing
+    # If prefixing, work with reversed strings
+    prefbias, suffbias = 0,0
+    for l in lines:
+        lemma, _, form = l.split(u'\t')
+        aligned = halign(lemma, form)
+        if ' ' not in aligned[0] and ' ' not in aligned[1] and '-' not in aligned[0] and '-' not in aligned[1]:
+            prefbias += numleadingsyms(aligned[0],'_') + numleadingsyms(aligned[1],'_')
+            suffbias += numtrailingsyms(aligned[0],'_') + numtrailingsyms(aligned[1],'_')
 
-            for r in prules:
-                if (r[0],r[1]) in allprules[msd]:
-                    allprules[msd][(r[0],r[1])] = allprules[msd][(r[0],r[1])] + 1
-                else:
-                    allprules[msd][(r[0],r[1])] = 1
+    # Read in training data lines and extract transformation rules from pairs
+    for l in lines: 
+        lemma, msd, form = l.split(u'\t')
+        if prefbias > suffbias:
+            lemma = lemma[::-1]
+            form = form[::-1]
+        prules, srules = prefix_suffix_rules_get(lemma, form)
 
-            for r in srules:
-                if (r[0],r[1]) in allsrules[msd]:
-                    allsrules[msd][(r[0],r[1])] = allsrules[msd][(r[0],r[1])] + 1
-                else:
-                    allsrules[msd][(r[0],r[1])] = 1
+        if msd not in allprules and len(prules) > 0:
+            allprules[msd] = {}
+        if msd not in allsrules and len(srules) > 0:
+            allsrules[msd] = {}
 
-        # Run eval on dev
+        for r in prules:
+            if (r[0],r[1]) in allprules[msd]:
+                allprules[msd][(r[0],r[1])] += 1
+            else:
+                allprules[msd][(r[0],r[1])] = 1
+
+        for r in srules:
+            if (r[0],r[1]) in allsrules[msd]:
+                allsrules[msd][(r[0],r[1])] += 1
+            else:
+                allsrules[msd][(r[0],r[1])] = 1
+
+    # Read in trial data lines from either spa.tst or spa.dev
+    if TEST:
+        devlines = [line.strip() for line in open(path + lang + ".tst", "r", encoding='utf8') if line != '\n']
+    else:
         devlines = [line.strip() for line in open(path + lang + ".dev", "r", encoding='utf8') if line != '\n']
-        if TEST:
-            devlines = [line.strip() for line in open(path + lang + ".tst", "r", encoding='utf8') if line != '\n']
-        numcorrect = 0
-        numguesses = 0
+    
+    # Run eval on relevant set 
+    numcorrect = 0
+    numguesses = 0
+    if OUTPUT:
+        outfile = open(path + lang + ".out", "w", encoding='utf8')
+    for l in devlines:
+        lemma, msd, correct = l.split(u'\t')
+        if prefbias > suffbias:
+            lemma = lemma[::-1]
+        outform = apply_best_rule(lemma, msd, allprules, allsrules)
+        if prefbias > suffbias:
+            outform = outform[::-1]
+            lemma = lemma[::-1]
+        if outform == correct:
+            numcorrect += 1
+        numguesses += 1
         if OUTPUT:
-            outfile = open(path + lang + ".out", "w", encoding='utf8')
-        for l in devlines:
-            lemma, msd, correct = l.split(u'\t')
-#                    lemma, msd, = l.split(u'\t')
-            if prefbias > suffbias:
-                lemma = lemma[::-1]
-            outform = apply_best_rule(lemma, msd, allprules, allsrules)
-            if prefbias > suffbias:
-                outform = outform[::-1]
-                lemma = lemma[::-1]
-            if outform == correct:
-                numcorrect += 1
-            numguesses += 1
-            if OUTPUT:
-                outfile.write(lemma + "\t" + msd + "\t" + outform + "\n")
+            outfile.write(lemma + "\t" + msd + "\t" + outform + "\n")
 
-        if OUTPUT:
-            outfile.close()
+    if OUTPUT:
+        outfile.close()
 
-        numlang += 1
-        totalavg += numcorrect/float(numguesses)
+    totalavg += numcorrect/float(numguesses)
 
-        print(lang + ": " + str(str(numcorrect/float(numguesses)))[0:7])
+    print(lang + ": " + str(str(numcorrect/float(numguesses)))[0:7])
 
-    print("Average accuracy", totalavg/float(numlang))
 
 
 if __name__ == "__main__":

@@ -1,3 +1,134 @@
+265c265
+< desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
+---
+> desencerrar	V;IND;PRS;NOM(1,SG)	desencerro
+267c267
+< desencerrar	V;IND;PRS;NOM(3,PL)	desencierran
+---
+> desencerrar	V;IND;PRS;NOM(3,PL)	desencerran
+
+296c296
+< desplumar	V;SBJV;PRS;NOM(1,SG)	desplume
+---
+> desplumar	V;SBJV;PRS;NOM(1,SG)	desplúme
+
+315c315
+< dispertar	V;SBJV;PRS;NOM(3,SG)	dispierte
+---
+> dispertar	V;SBJV;PRS;NOM(3,SG)	disperte
+
+459c459
+< exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptúe
+---
+> exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptue
+
+643c643
+< minger	V;IND;FUT;NOM(1,SG)	mingeré
+---
+> minger	V;IND;FUT;NOM(1,SG)	mingdré
+
+656c656
+< minger	V;SBJV;PRS;NOM(2,PL)	minjáis
+---
+> minger	V;SBJV;PRS;NOM(2,PL)	mingáis
+
+756,760c756,760
+< prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostituyás
+< prostituir	V;SBJV;PRS;NOM(3,PL)	prostituyan
+< prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituyese
+< prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituyese
+< prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituyéndose
+---
+> prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostitás
+> prostituir	V;SBJV;PRS;NOM(3,PL)	prostitan
+> prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituiese
+> prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
+> prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
+
+867c867
+< seducir	V;IND;PRS;NOM(1,SG)	seduzco
+---
+> seducir	V;IND;PRS;NOM(1,SG)	seduco
+
+870c870
+< seducir	V;IND;PST;PFV;NOM(1,PL)	sedujimos
+---
+> seducir	V;IND;PST;PFV;NOM(1,PL)	seducimos
+
+873,876c873,876
+< seducir	V;POS;IMP;NOM(1,PL)	seduzcamos
+< seducir	V;SBJV;FUT;NOM(3,PL)	sedujeren
+< seducir	V;SBJV;PRS;NOM(3,PL)	seduzcan
+< seducir	V;SBJV;PRS;NOM(3,SG)	seduzca
+---
+> seducir	V;POS;IMP;NOM(1,PL)	sedugamos
+> seducir	V;SBJV;FUT;NOM(3,PL)	seducieren
+> seducir	V;SBJV;PRS;NOM(3,PL)	seducan
+> seducir	V;SBJV;PRS;NOM(3,SG)	seduiga
+879,880c879,880
+< seducir	V;V.PTCP;PST;MASC;PL	seducidos
+< seducir	V;V.PTCP;PST;MASC;SG	seducido
+---
+> seducir	V;V.PTCP;PST;MASC;PL	seduchos
+> seducir	V;V.PTCP;PST;MASC;SG	seducho
+
+929,930c929,930
+< sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreíamos
+< sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonrió
+---
+> sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreímos
+> sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonreí
+934,940c934,940
+< sonreír	V;POS;IMP;NOM(1,PL)	sonriamos
+< sonreír	V;SBJV;FUT;NOM(3,PL)	sonrieren
+< sonreír	V;SBJV;PRS;NOM(2,PL)	sonriáis
+< sonreír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	sonrieras
+< sonreír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	sonriésemos
+< sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonriese
+< sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonriese
+---
+> sonreír	V;POS;IMP;NOM(1,PL)	sonreímos
+> sonreír	V;SBJV;FUT;NOM(3,PL)	sonreíren
+> sonreír	V;SBJV;PRS;NOM(2,PL)	sonreíis
+> sonreír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	sonreíras
+> sonreír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	sonreímos
+> sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonreíse
+> sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonreíse
+
+960c960
+< subscribir	V;V.PTCP;PST;FEM;PL	subscriptas
+---
+> subscribir	V;V.PTCP;PST;FEM;PL	subscribidas
+
+977c977
+< suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	supliésemos
+---
+> suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	suplésemos
+979c979
+< suplir	V;V.CVB;PRS;ACC(2,SG)	supliéndote
+---
+> suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
+
+
+
+
+
+### Defaulting to longer replacement suffix via stem change
+
+
+90c90
+< argumentar	V;IND;PRS;NOM(1,SG)	argumento
+---
+> argumentar	V;IND;PRS;NOM(1,SG)	argumiento
+
+
+
+
+
+
+### Everything below is just imperative accent issues...
+
+
 22,23c22,23
 < afrancesar	V;IMP;ACC(1,SG);NOM(INFM,2,SG)	afrancésame
 < afrancesar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	afrancésalas
@@ -40,10 +171,7 @@
 < argumentar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	arguméntale
 ---
 > argumentar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	argumiéntale
-90c90
-< argumentar	V;IND;PRS;NOM(1,SG)	argumento
----
-> argumentar	V;IND;PRS;NOM(1,SG)	argumiento
+
 123,124c123,124
 < calefactar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	calefáctalas
 < calefactar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	calefáctennos
@@ -86,14 +214,7 @@
 < depauperar	V;IMP;DAT(3,PL);NOM(FORM,2,PL)	depaupérense
 ---
 > depauperar	V;IMP;DAT(3,PL);NOM(FORM,2,PL)	depauperense
-265c265
-< desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
----
-> desencerrar	V;IND;PRS;NOM(1,SG)	desencerro
-267c267
-< desencerrar	V;IND;PRS;NOM(3,PL)	desencierran
----
-> desencerrar	V;IND;PRS;NOM(3,PL)	desencerran
+
 273c273
 < desencerrar	V;NEG;IMP;NOM(2,SG,INFM)	no desencierres
 ---
@@ -122,10 +243,7 @@
 < desplumar	V;NEG;IMP;NOM(2,SG,FORM)	no desplume
 ---
 > desplumar	V;NEG;IMP;NOM(2,SG,FORM)	no desplúme
-296c296
-< desplumar	V;SBJV;PRS;NOM(1,SG)	desplume
----
-> desplumar	V;SBJV;PRS;NOM(1,SG)	desplúme
+
 304c304
 < dispertar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	dispiértenos
 ---
@@ -140,10 +258,7 @@
 < dispertar	V;NEG;IMP;NOM(2,PL,FORM)	no dispierten
 ---
 > dispertar	V;NEG;IMP;NOM(2,PL,FORM)	no disperten
-315c315
-< dispertar	V;SBJV;PRS;NOM(3,SG)	dispierte
----
-> dispertar	V;SBJV;PRS;NOM(3,SG)	disperte
+
 323c323
 < elevar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	elévenos
 ---
@@ -200,10 +315,7 @@
 < exceptuar	V;NEG;IMP;NOM(2,SG,INFM)	no exceptúes
 ---
 > exceptuar	V;NEG;IMP;NOM(2,SG,INFM)	no exceptues
-459c459
-< exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptúe
----
-> exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptue
+
 486,489c486,489
 < fichar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	fíchenos
 < fichar	V;IMP;ACC(1,SG);NOM(FORM,2,PL)	fíchenme
@@ -234,10 +346,7 @@
 ---
 > membretar	V;IMP;DAT(2,SG);NOM(INFM,2,SG)	membretate
 > membretar	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	membretenle
-643c643
-< minger	V;IND;FUT;NOM(1,SG)	mingeré
----
-> minger	V;IND;FUT;NOM(1,SG)	mingdré
+
 651,653c651,653
 < minger	V;NEG;IMP;NOM(2,PL,FORM)	no minjan
 < minger	V;NEG;IMP;NOM(2,SG,FORM)	no minja
@@ -246,10 +355,7 @@
 > minger	V;NEG;IMP;NOM(2,PL,FORM)	no mingan
 > minger	V;NEG;IMP;NOM(2,SG,FORM)	no minga
 > minger	V;POS;IMP;NOM(1,PL)	mingamos
-656c656
-< minger	V;SBJV;PRS;NOM(2,PL)	minjáis
----
-> minger	V;SBJV;PRS;NOM(2,PL)	mingáis
+
 664c664
 < mocar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	mócala
 ---
@@ -280,18 +386,7 @@
 ---
 > prostituir	V;IMP;DAT(2,SG);NOM(1,PL)	prostituámoste
 > prostituir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	prostitueles
-756,760c756,760
-< prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostituyás
-< prostituir	V;SBJV;PRS;NOM(3,PL)	prostituyan
-< prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituyese
-< prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituyese
-< prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituyéndose
----
-> prostituir	V;SBJV;PRS;NOM(2,SG,INFM)	prostitás
-> prostituir	V;SBJV;PRS;NOM(3,PL)	prostitan
-> prostituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	prostituiese
-> prostituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	prostituiese
-> prostituir	V;V.CVB;PRS;ACC(3,PL)	prostituiéndose
+
 763c763
 < reactivar	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	reactívanos
 ---
@@ -318,30 +413,7 @@
 ---
 > seducir	V;IMP;DAT(3,SG);NOM(1,PL)	seducámosle
 > seducir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	seducele
-867c867
-< seducir	V;IND;PRS;NOM(1,SG)	seduzco
----
-> seducir	V;IND;PRS;NOM(1,SG)	seduco
-870c870
-< seducir	V;IND;PST;PFV;NOM(1,PL)	sedujimos
----
-> seducir	V;IND;PST;PFV;NOM(1,PL)	seducimos
-873,876c873,876
-< seducir	V;POS;IMP;NOM(1,PL)	seduzcamos
-< seducir	V;SBJV;FUT;NOM(3,PL)	sedujeren
-< seducir	V;SBJV;PRS;NOM(3,PL)	seduzcan
-< seducir	V;SBJV;PRS;NOM(3,SG)	seduzca
----
-> seducir	V;POS;IMP;NOM(1,PL)	sedugamos
-> seducir	V;SBJV;FUT;NOM(3,PL)	seducieren
-> seducir	V;SBJV;PRS;NOM(3,PL)	seducan
-> seducir	V;SBJV;PRS;NOM(3,SG)	seduiga
-879,880c879,880
-< seducir	V;V.PTCP;PST;MASC;PL	seducidos
-< seducir	V;V.PTCP;PST;MASC;SG	seducido
----
-> seducir	V;V.PTCP;PST;MASC;PL	seduchos
-> seducir	V;V.PTCP;PST;MASC;SG	seducho
+
 883,885c883,885
 < sobredorar	V;IMP;ACC(2,SG);NOM(INFM,2,SG)	sobredórate
 < sobredorar	V;IMP;ACC(3,PL);NOM(INFM,2,SG)	sobredóralas
@@ -366,28 +438,7 @@
 > sonreír	V;IMP;DAT(2,PL);NOM(1,PL)	sonreíos
 > sonreír	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	sonreíles
 > sonreír	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	sonreínle
-929,930c929,930
-< sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreíamos
-< sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonrió
----
-> sonreír	V;IND;PST;IPFV;NOM(1,PL)	sonreímos
-> sonreír	V;IND;PST;PFV;NOM(2,SG,FORM)	sonreí
-934,940c934,940
-< sonreír	V;POS;IMP;NOM(1,PL)	sonriamos
-< sonreír	V;SBJV;FUT;NOM(3,PL)	sonrieren
-< sonreír	V;SBJV;PRS;NOM(2,PL)	sonriáis
-< sonreír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	sonrieras
-< sonreír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	sonriésemos
-< sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonriese
-< sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonriese
----
-> sonreír	V;POS;IMP;NOM(1,PL)	sonreímos
-> sonreír	V;SBJV;FUT;NOM(3,PL)	sonreíren
-> sonreír	V;SBJV;PRS;NOM(2,PL)	sonreíis
-> sonreír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	sonreíras
-> sonreír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	sonreímos
-> sonreír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	sonreíse
-> sonreír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	sonreíse
+
 943c943
 < subscribir	V;IMP;ACC(1,SG);NOM(FORM,2,SG)	subscríbame
 ---
@@ -402,10 +453,7 @@
 < subscribir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	subscríbele
 ---
 > subscribir	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	subscribele
-960c960
-< subscribir	V;V.PTCP;PST;FEM;PL	subscriptas
----
-> subscribir	V;V.PTCP;PST;FEM;PL	subscribidas
+
 963c963
 < suplir	V;IMP;ACC(1,PL);NOM(FORM,2,PL)	súplannos
 ---
@@ -426,14 +474,7 @@
 ---
 > suplir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	supleles
 > suplir	V;IMP;DAT(3,SG);NOM(FORM,2,SG)	suplase
-977c977
-< suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	supliésemos
----
-> suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	suplésemos
-979c979
-< suplir	V;V.CVB;PRS;ACC(2,SG)	supliéndote
----
-> suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
+
 985,989c985,989
 < vendar	V;IMP;ACC(3,SG);NOM(INFM,2,SG)	véndala
 < vendar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	véndennos
