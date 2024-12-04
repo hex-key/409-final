@@ -1,0 +1,264 @@
+37c37
+< afrancesar	V;POS;IMP;NOM(2,PL,INFM)	afrancesad
+---
+> afrancesar	V;POS;IMP;NOM(2,PL,INFM)	afráncesad
+53c53
+< amarar	V;POS;IMP;NOM(2,PL,INFM)	amarad
+---
+> amarar	V;POS;IMP;NOM(2,PL,INFM)	ámarad
+63c63
+< aplaudir	V;IMP;ACC(3,PL);NOM(1,PL)	aplaudámoslas
+---
+> aplaudir	V;IMP;ACC(3,PL);NOM(1,PL)	aplaudyámoslas
+65,66c65,66
+< aplaudir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	apláudase
+< aplaudir	V;IMP;DAT(1,PL);NOM(INFM,2,SG)	apláudenos
+---
+> aplaudir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	aplaúdase
+> aplaudir	V;IMP;DAT(1,PL);NOM(INFM,2,SG)	aplaúdenos
+68c68
+< aplaudir	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	apláudales
+---
+> aplaudir	V;IMP;DAT(3,PL);NOM(FORM,2,SG)	aplaúdales
+75c75
+< aplaudir	V;POS;IMP;NOM(1,PL)	aplaudamos
+---
+> aplaudir	V;POS;IMP;NOM(1,PL)	aplaúdamos
+88c88
+< argumentar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	arguméntale
+---
+> argumentar	V;IMP;DAT(3,SG);NOM(INFM,2,SG)	argumiéntale
+90c90
+< argumentar	V;IND;PRS;NOM(1,SG)	argumento
+---
+> argumentar	V;IND;PRS;NOM(1,SG)	argumiento
+110,111c110,111
+< barbotear	V;POS;IMP;NOM(2,PL,FORM)	barboteen
+< barbotear	V;POS;IMP;NOM(2,PL,INFM)	barbotead
+---
+> barbotear	V;POS;IMP;NOM(2,PL,FORM)	barbóteen
+> barbotear	V;POS;IMP;NOM(2,PL,INFM)	barbótead
+136c136
+< calefactar	V;POS;IMP;NOM(2,PL,INFM)	calefactad
+---
+> calefactar	V;POS;IMP;NOM(2,PL,INFM)	caléfactad
+155c155
+< cancelar	V;POS;IMP;NOM(2,PL,INFM)	cancelad
+---
+> cancelar	V;POS;IMP;NOM(2,PL,INFM)	cáncelad
+173c173
+< celebrar	V;POS;IMP;NOM(2,PL,FORM)	celebren
+---
+> celebrar	V;POS;IMP;NOM(2,PL,FORM)	célebren
+194c194
+< chorrear	V;POS;IMP;NOM(2,PL,INFM)	chorread
+---
+> chorrear	V;POS;IMP;NOM(2,PL,INFM)	chórread
+265c265
+< desencerrar	V;IND;PRS;NOM(1,SG)	desencierro
+---
+> desencerrar	V;IND;PRS;NOM(1,SG)	desencerro
+267c267
+< desencerrar	V;IND;PRS;NOM(3,PL)	desencierran
+---
+> desencerrar	V;IND;PRS;NOM(3,PL)	desencerran
+273c273
+< desencerrar	V;NEG;IMP;NOM(2,SG,INFM)	no desencierres
+---
+> desencerrar	V;NEG;IMP;NOM(2,SG,INFM)	no desencerres
+275,276c275,276
+< desencerrar	V;POS;IMP;NOM(2,PL,FORM)	desencierren
+< desencerrar	V;POS;IMP;NOM(2,SG,FORM)	desencierre
+---
+> desencerrar	V;POS;IMP;NOM(2,PL,FORM)	deséncerren
+> desencerrar	V;POS;IMP;NOM(2,SG,FORM)	deséncerre
+292c292
+< desplumar	V;NEG;IMP;NOM(2,SG,FORM)	no desplume
+---
+> desplumar	V;NEG;IMP;NOM(2,SG,FORM)	no desplúme
+294c294
+< desplumar	V;POS;IMP;NOM(2,PL,INFM)	desplumad
+---
+> desplumar	V;POS;IMP;NOM(2,PL,INFM)	désplumad
+296c296
+< desplumar	V;SBJV;PRS;NOM(1,SG)	desplume
+---
+> desplumar	V;SBJV;PRS;NOM(1,SG)	desplúme
+304c304
+< dispertar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	dispiértenos
+---
+> dispertar	V;IMP;ACC(1,PL);NOM(FORM,2,SG)	dispértenos
+306,307c306,307
+< dispertar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	dispiértennos
+< dispertar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	dispiérteme
+---
+> dispertar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	dispértennos
+> dispertar	V;IMP;DAT(1,SG);NOM(FORM,2,SG)	dispérteme
+311,312c311,312
+< dispertar	V;NEG;IMP;NOM(2,PL,FORM)	no dispierten
+< dispertar	V;POS;IMP;NOM(2,PL,INFM)	dispertad
+---
+> dispertar	V;NEG;IMP;NOM(2,PL,FORM)	no disperten
+> dispertar	V;POS;IMP;NOM(2,PL,INFM)	díspertad
+315c315
+< dispertar	V;SBJV;PRS;NOM(3,SG)	dispierte
+---
+> dispertar	V;SBJV;PRS;NOM(3,SG)	disperte
+373c373
+< entroncar	V;POS;IMP;NOM(1,PL)	entronquemos
+---
+> entroncar	V;POS;IMP;NOM(1,PL)	entronqúemos
+413c413
+< escoltar	V;POS;IMP;NOM(2,PL,INFM)	escoltad
+---
+> escoltar	V;POS;IMP;NOM(2,PL,INFM)	éscoltad
+454c454
+< exceptuar	V;NEG;IMP;NOM(2,SG,INFM)	no exceptúes
+---
+> exceptuar	V;NEG;IMP;NOM(2,SG,INFM)	no exceptues
+459c459
+< exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptúe
+---
+> exceptuar	V;SBJV;PRS;NOM(3,SG)	exceptue
+471c471
+< fibrilar	V;POS;IMP;NOM(2,SG,FORM)	fibrile
+---
+> fibrilar	V;POS;IMP;NOM(2,SG,FORM)	fíbrile
+509,510c509,510
+< glotalizar	V;POS;IMP;NOM(1,PL)	glotalicemos
+< glotalizar	V;POS;IMP;NOM(2,SG,FORM)	glotalice
+---
+> glotalizar	V;POS;IMP;NOM(1,PL)	glotalícemos
+> glotalizar	V;POS;IMP;NOM(2,SG,FORM)	glotálice
+553c553
+< industrializar	V;POS;IMP;NOM(2,SG,FORM)	industrialice
+---
+> industrializar	V;POS;IMP;NOM(2,SG,FORM)	industriálice
+569c569
+< jinetear	V;POS;IMP;NOM(2,SG,FORM)	jinetee
+---
+> jinetear	V;POS;IMP;NOM(2,SG,FORM)	jinétee
+614c614
+< meditar	V;POS;IMP;NOM(1,PL)	meditemos
+---
+> meditar	V;POS;IMP;NOM(1,PL)	medítemos
+630,632c630,632
+< membretar	V;POS;IMP;NOM(1,PL)	membretemos
+< membretar	V;POS;IMP;NOM(2,PL,FORM)	membreten
+< membretar	V;POS;IMP;NOM(2,SG,FORM)	membrete
+---
+> membretar	V;POS;IMP;NOM(1,PL)	membrétemos
+> membretar	V;POS;IMP;NOM(2,PL,FORM)	mémbreten
+> membretar	V;POS;IMP;NOM(2,SG,FORM)	mémbrete
+643c643
+< minger	V;IND;FUT;NOM(1,SG)	mingeré
+---
+> minger	V;IND;FUT;NOM(1,SG)	mingdré
+651,653c651,653
+< minger	V;NEG;IMP;NOM(2,PL,FORM)	no minjan
+< minger	V;NEG;IMP;NOM(2,SG,FORM)	no minja
+< minger	V;POS;IMP;NOM(1,PL)	minjamos
+---
+> minger	V;NEG;IMP;NOM(2,PL,FORM)	no mingan
+> minger	V;NEG;IMP;NOM(2,SG,FORM)	no minga
+> minger	V;POS;IMP;NOM(1,PL)	míngamos
+656c656
+< minger	V;SBJV;PRS;NOM(2,PL)	minjáis
+---
+> minger	V;SBJV;PRS;NOM(2,PL)	mingáis
+714c714
+< palpitar	V;POS;IMP;NOM(1,PL)	palpitemos
+---
+> palpitar	V;POS;IMP;NOM(1,PL)	palpítemos
+742c742
+< prostituir	V;IMP;ACC(1,PL);NOM(1,PL)	prostituyámonos
+---
+> prostituir	V;IMP;ACC(1,PL);NOM(1,PL)	prostitámonos
+745c745
+< prostituir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	prostitúyase
+---
+> prostituir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	prostitúase
+747,748c747,748
+< prostituir	V;IMP;DAT(2,SG);NOM(1,PL)	prostituyámoste
+< prostituir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	prostitúyeles
+---
+> prostituir	V;IMP;DAT(2,SG);NOM(1,PL)	prostituámoste
+> prostituir	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	prostitúeles
+755c755
+< prostituir	V;POS;IMP;NOM(2,SG,FORM)	prostituya
+---
+> prostituir	V;POS;IMP;NOM(2,SG,FORM)	prostítuya
+774c774
+< reactivar	V;POS;IMP;NOM(2,PL,FORM)	reactiven
+---
+> reactivar	V;POS;IMP;NOM(2,PL,FORM)	reáctiven
+810,813c810,813
+< recovar	V;POS;IMP;NOM(1,PL)	recovemos
+< recovar	V;POS;IMP;NOM(2,PL,FORM)	recoven
+< recovar	V;POS;IMP;NOM(2,PL,INFM)	recovad
+< recovar	V;POS;IMP;NOM(2,SG,FORM)	recove
+---
+> recovar	V;POS;IMP;NOM(1,PL)	recóvemos
+> recovar	V;POS;IMP;NOM(2,PL,FORM)	récoven
+> recovar	V;POS;IMP;NOM(2,PL,INFM)	récovad
+> recovar	V;POS;IMP;NOM(2,SG,FORM)	récove
+836c836
+< reintegrar	V;POS;IMP;NOM(2,SG,FORM)	reintegre
+---
+> reintegrar	V;POS;IMP;NOM(2,SG,FORM)	reíntegre
+852,853c852,853
+< ronronear	V;POS;IMP;NOM(1,PL)	ronroneemos
+< ronronear	V;POS;IMP;NOM(2,PL,FORM)	ronroneen
+---
+> ronronear	V;POS;IMP;NOM(1,PL)	ronronéemos
+> ronronear	V;POS;IMP;NOM(2,PL,FORM)	ronróneen
+862c862
+< seducir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	sedúzcase
+---
+> seducir	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	sedúcase
+864c864
+< seducir	V;IMP;DAT(3,SG);NOM(1,PL)	seduzcámosle
+---
+> seducir	V;IMP;DAT(3,SG);NOM(1,PL)	seducámosle
+867c867
+< seducir	V;IND;PRS;NOM(1,SG)	seduzco
+---
+> seducir	V;IND;PRS;NOM(1,SG)	seduco
+870c870
+< seducir	V;IND;PST;PFV;NOM(1,PL)	sedujimos
+---
+> seducir	V;IND;PST;PFV;NOM(1,PL)	seducimos
+873,876c873,876
+< seducir	V;POS;IMP;NOM(1,PL)	seduzcamos
+< seducir	V;SBJV;FUT;NOM(3,PL)	sedujeren
+< seducir	V;SBJV;PRS;NOM(3,PL)	seduzcan
+< seducir	V;SBJV;PRS;NOM(3,SG)	seduzca
+---
+> seducir	V;POS;IMP;NOM(1,PL)	sedúgamos
+> seducir	V;SBJV;FUT;NOM(3,PL)	seducieren
+> seducir	V;SBJV;PRS;NOM(3,PL)	seducan
+> seducir	V;SBJV;PRS;NOM(3,SG)	seduiga
+898c898
+< sobredorar	V;POS;IMP;NOM(2,PL,FORM)	sobredoren
+---
+> sobredorar	V;POS;IMP;NOM(2,PL,FORM)	sobrédoren
+934c934
+< sonreír	V;POS;IMP;NOM(1,PL)	sonriamos
+---
+> sonreír	V;POS;IMP;NOM(1,PL)	sonríamos
+945c945
+< subscribir	V;IMP;ACC(3,PL);NOM(1,PL)	subscribámoslas
+---
+> subscribir	V;IMP;ACC(3,PL);NOM(1,PL)	subscribyámoslas
+977c977
+< suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	supliésemos
+---
+> suplir	V;SBJV;PST;LGSPEC2;NOM(1,PL)	suplésemos
+979c979
+< suplir	V;V.CVB;PRS;ACC(2,SG)	supliéndote
+---
+> suplir	V;V.CVB;PRS;ACC(2,SG)	supléndote
+986c986
+< vendar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	véndennos
+---
+> vendar	V;IMP;DAT(1,PL);NOM(FORM,2,PL)	vendnos
