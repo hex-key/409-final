@@ -1,3 +1,7 @@
+### so adding in accents indiscriminantly actually resulted in more errors
+## took out NOM(INFM,2,PL) and any NEG
+## but the resulting score was still lower
+
 3c3
 < acondicionar	V;IMP;DAT(2,PL);NOM(INFM,2,PL)	acondiciónaos
 ---
