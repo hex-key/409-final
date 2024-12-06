@@ -257,6 +257,75 @@ def numleadingsyms(s, symbol):
 def numtrailingsyms(s, symbol):
     return len(s) - len(s.rstrip(symbol))
 
+def count_syllables(word):
+    """Count syllables in a Spanish word based on vowel sequences"""
+    vowels = 'aeiouáéíóúAEIOUÁÉÍÓÚ'
+    diphthongs = ['ai', 'ei', 'oi', 'ui', 'au', 'eu', 'ou', 
+                  'ia', 'ie', 'io', 'iu', 'ua', 'ue', 'uo']
+    count = 0
+    i = 0
+    while i < len(word):
+        if word[i] in vowels:
+            if i < len(word) - 1 and word[i:i+2].lower() in diphthongs:
+                count += 1
+                i += 2
+            else:
+                count += 1
+                i += 1
+        else:
+            i += 1
+    return count
+
+def has_accent(word):
+    """Check if word already contains any Spanish accent marks"""
+    accent_vowels = 'áéíóú'
+    return any(char in accent_vowels for char in word)
+
+def add_accent_to_third_syllable(word, msd):
+    """Add accent to the third syllable from the end if:
+    1. The word is imperative
+    2. The word doesn't already have an accent mark
+    3. The word is long enough
+    4. The word is not negative
+    5. The word is not INFM,2,PL"""
+    
+    if 'IMP' not in msd:  # Only process imperatives
+        return word
+    if 'NEG' in msd:  # Don't process negatives
+        return word
+    if 'INFM,2,PL' in msd:
+        return word
+    if has_accent(word):  # Skip if word already has an accent
+        return word
+    
+    vowels = 'aeiouAEIOU'
+    accent_map = {'a': 'á', 'e': 'é', 'i': 'í', 'o': 'ó', 'u': 'ú'}
+    
+    # Count syllables from the end
+    syllables = count_syllables(word)
+    if syllables < 3:  # Word is too short
+        return word
+    
+    # Find the third-to-last vowel
+    vowel_count = 0
+    vowel_positions = []
+    
+    for i, char in enumerate(word):
+        if char in vowels:
+            vowel_count += 1
+            vowel_positions.append(i)
+    
+    if len(vowel_positions) >= 3:
+        # Get the position of the third-to-last vowel
+        target_pos = vowel_positions[-3]
+        # Add accent to that vowel
+        word_list = list(word)
+        if word_list[target_pos] in accent_map:
+            word_list[target_pos] = accent_map[word_list[target_pos]]
+        return ''.join(word_list)
+    
+    return word
+
 ###############################################################################
 
 
@@ -285,79 +354,78 @@ def main(argv):
             quit()
 
     totalavg, numlang = 0.0, 0
-    lang = "spa"
-    
-    allprules, allsrules = {}, {}
+    for lang in [os.path.splitext(d)[0] for d in os.listdir(path) if '.trn' in d]:
+        allprules, allsrules = {}, {}
+        if not os.path.isfile(path + lang +  ".trn"):
+            continue
+        lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
 
-    lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
+        # First, test if language is predominantly suffixing or prefixing
+        # If prefixing, work with reversed strings
+        prefbias, suffbias = 0,0
+        for l in lines:
+            lemma, _, form = l.split(u'\t')
+            aligned = halign(lemma, form)
+            if ' ' not in aligned[0] and ' ' not in aligned[1] and '-' not in aligned[0] and '-' not in aligned[1]:
+                prefbias += numleadingsyms(aligned[0],'_') + numleadingsyms(aligned[1],'_')
+                suffbias += numtrailingsyms(aligned[0],'_') + numtrailingsyms(aligned[1],'_')
+        for l in lines: # Read in lines and extract transformation rules from pairs
+            lemma, msd, form = l.split(u'\t')
+            if prefbias > suffbias:
+                lemma = lemma[::-1]
+                form = form[::-1]
+            prules, srules = prefix_suffix_rules_get(lemma, form)
 
-    # First, test if language is predominantly suffixing or prefixing
-    # If prefixing, work with reversed strings
-    prefbias, suffbias = 0,0
-    for l in lines:
-        lemma, _, form = l.split(u'\t')
-        aligned = halign(lemma, form)
-        if ' ' not in aligned[0] and ' ' not in aligned[1] and '-' not in aligned[0] and '-' not in aligned[1]:
-            prefbias += numleadingsyms(aligned[0],'_') + numleadingsyms(aligned[1],'_')
-            suffbias += numtrailingsyms(aligned[0],'_') + numtrailingsyms(aligned[1],'_')
+            if msd not in allprules and len(prules) > 0:
+                allprules[msd] = {}
+            if msd not in allsrules and len(srules) > 0:
+                allsrules[msd] = {}
 
-    # Read in training data lines and extract transformation rules from pairs
-    for l in lines: 
-        lemma, msd, form = l.split(u'\t')
-        if prefbias > suffbias:
-            lemma = lemma[::-1]
-            form = form[::-1]
-        prules, srules = prefix_suffix_rules_get(lemma, form)
+            for r in prules:
+                if (r[0],r[1]) in allprules[msd]:
+                    allprules[msd][(r[0],r[1])] = allprules[msd][(r[0],r[1])] + 1
+                else:
+                    allprules[msd][(r[0],r[1])] = 1
 
-        if msd not in allprules and len(prules) > 0:
-            allprules[msd] = {}
-        if msd not in allsrules and len(srules) > 0:
-            allsrules[msd] = {}
+            for r in srules:
+                if (r[0],r[1]) in allsrules[msd]:
+                    allsrules[msd][(r[0],r[1])] = allsrules[msd][(r[0],r[1])] + 1
+                else:
+                    allsrules[msd][(r[0],r[1])] = 1
 
-        for r in prules:
-            if (r[0],r[1]) in allprules[msd]:
-                allprules[msd][(r[0],r[1])] += 1
-            else:
-                allprules[msd][(r[0],r[1])] = 1
-
-        for r in srules:
-            if (r[0],r[1]) in allsrules[msd]:
-                allsrules[msd][(r[0],r[1])] += 1
-            else:
-                allsrules[msd][(r[0],r[1])] = 1
-
-    # Read in trial data lines from either spa.tst or spa.dev
-    if TEST:
-        devlines = [line.strip() for line in open(path + lang + ".tst", "r", encoding='utf8') if line != '\n']
-    else:
+        # Run eval on dev
         devlines = [line.strip() for line in open(path + lang + ".dev", "r", encoding='utf8') if line != '\n']
-    
-    # Run eval on relevant set 
-    numcorrect = 0
-    numguesses = 0
-    if OUTPUT:
-        outfile = open(path + lang + ".out", "w", encoding='utf8')
-    for l in devlines:
-        lemma, msd, correct = l.split(u'\t')
-        if prefbias > suffbias:
-            lemma = lemma[::-1]
-        outform = apply_best_rule(lemma, msd, allprules, allsrules)
-        if prefbias > suffbias:
-            outform = outform[::-1]
-            lemma = lemma[::-1]
-        if outform == correct:
-            numcorrect += 1
-        numguesses += 1
+        if TEST:
+            devlines = [line.strip() for line in open(path + lang + ".tst", "r", encoding='utf8') if line != '\n']
+        numcorrect = 0
+        numguesses = 0
         if OUTPUT:
-            outfile.write(lemma + "\t" + msd + "\t" + outform + "\n")
+            outfile = open(path + lang + ".out", "w", encoding='utf8')
+        for l in devlines:
+            lemma, msd, correct = l.split(u'\t')
+#                    lemma, msd, = l.split(u'\t')
+            if prefbias > suffbias:
+                lemma = lemma[::-1]
+            outform = apply_best_rule(lemma, msd, allprules, allsrules)
+            if prefbias > suffbias:
+                outform = outform[::-1]
+                lemma = lemma[::-1]
+            outform = add_accent_to_third_syllable(outform, msd)
+            if outform == correct:
+                numcorrect += 1
+            numguesses += 1
+            if OUTPUT:
+                outfile.write(lemma + "\t" + msd + "\t" + outform + "\n")
 
-    if OUTPUT:
-        outfile.close()
+        if OUTPUT:
+            outfile.close()
 
-    totalavg += numcorrect/float(numguesses)
+        numlang += 1
+        totalavg += numcorrect/float(numguesses)
 
-    print(lang + ": " + str(str(numcorrect/float(numguesses)))[0:7])
+        print(lang + ": " + str(str(numcorrect/float(numguesses)))[0:7])
 
+    print("Average accuracy", totalavg/float(numlang))
 
 
 if __name__ == "__main__":
