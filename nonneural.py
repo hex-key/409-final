@@ -293,20 +293,9 @@ def main(argv):
             quit()
 
     totalavg, numlang = 0.0, 0
-<<<<<<< HEAD
-    for lang in [os.path.splitext(d)[0] for d in os.listdir(path) if '.trn' in d]:
-        allprules, allsrules = {}, {}
-
-        # RULES dictionaries are of the format
-        # {'set of features': 'base suffix' 'modified suffix' '}
-        if not os.path.isfile(path + lang +  ".trn"):
-            continue
-        lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
-=======
     lang = "spa"
     
     allprules, allsrules = {}, {}
->>>>>>> master
 
     lines = [line.strip() for line in open(path + lang + ".trn", "r", encoding='utf8') if line != '\n']
 
