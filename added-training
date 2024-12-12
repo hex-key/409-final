@@ -17,4 +17,87 @@ of their special types being unrepresented.
   4) No highly irregular verbs are included (eg. ir, ser, estar, tener),
 though verbs that are irregular in ending (eg. subscribir) or stem changes (eg. dispertar)
 do appear. 
-  5) A large amount of the IMP data have an accusative case 
+  5) A large amount of the IMP data have an accusative or dative case, which is resulting
+in the issues with 3rd-to-last accents for most of the IMP data points. This is the aspect
+tried to fix with the added code functions.
+
+
+
+
+The following briefly explains the reasoning behind added lines to the training data,
+which attempt to address the issues from points 3 and 4 above.
+
+- We noticed (from modifying the baseline code to print out the chosen best rule) that 
+a lot of the mistaken predictions are working off of rules with only 1 or 2 in frequency. 
+The preferences for longer-replaced-suffix or -replacement-suffix also resulted in some
+strange outcomes, a lot of which could be fixed if there were just 1 (more) representation
+of the special verb type in the training data. 
+- So instead of trying to add 'whole' paradigms (because it is still unclear what the criteria
+for msd's are), we added one line to match for each false prediction from our .dev outcomes
+(which we analyzed via diff). This would minimize any unforeseen effects on the entire
+function while showing/fixing some of the deficiencies with what we are working with.
+- The following are categorized and listed by their appearance in the .dev set.
+- All the added verbs were chosen based on their similarity in type to the problem predictions
+and if they were a "commonly-used" verb (or at least one that is easily recognizable instead
+of obscure). 
+
+1) sonreír
+- Because of the accent on the thematic vowel, this is a special type of verb. The function
+rightfully recognizes that as being different from -ir, but it resulted in having no 
+replacement-suffix to go off of except for -r. This obviously led to bad predictions, since
+the data is largely dominated by -ar verbs and replacing just the -r doesn't deal with parts
+of the verb that actually needs to be conjugated.
+- Because there was no verb of this type in the .trn data, we added in lines for desleír, using
+the msd's of sonreír. (This is the only instant where we added a 'whole' paradigm.) Just having
+one instance fixed the predicitons upon re-running the code, showing that the baseline has great
+potential to work with small data sets as long as the data is "comprehensive" in representing
+the Spanish langauge.
+
+desleír	V;COND;NOM(3,PL)	desleirían
+desleír	V;IMP;ACC(1,PL);NOM(INFM,2,SG)	deslíenos
+desleír	V;IMP;ACC(3,SG);NOM(FORM,2,SG)	deslíase
+desleír	V;IMP;DAT(1,PL);NOM(1,PL)	desliámonos
+desleír	V;IMP;DAT(2,PL);NOM(1,PL)	desliámoos
+desleír	V;IMP;DAT(3,PL);NOM(INFM,2,SG)	deslíeles
+desleír	V;IMP;DAT(3,SG);NOM(FORM,2,PL)	deslíanle
+desleír	V;IND;PRS;NOM(1,PL)	desleímos
+desleír	V;IND;PST;IPFV;NOM(1,PL)	desleíamos
+desleír	V;IND;PST;PFV;NOM(2,SG,FORM)	deslió
+desleír	V;NFIN;DAT(1,PL)	desleírnos
+desleír	V;NFIN;DAT(2,SG)	desleírte
+desleír	V;NFIN;DAT(3,PL)	desleírse
+desleír	V;POS;IMP;NOM(1,PL)	desliamos
+desleír	V;SBJV;FUT;NOM(3,PL)	deslieren
+desleír	V;SBJV;PRS;NOM(2,PL)	desliáis
+desleír	V;SBJV;PST;LGSPEC1;NOM(2,SG,INFM)	deslieras
+desleír	V;SBJV;PST;LGSPEC2;NOM(1,PL)	desliésemos
+desleír	V;SBJV;PST;LGSPEC2;NOM(2,SG,FORM)	desliese
+desleír	V;SBJV;PST;LGSPEC2;NOM(3,SG)	desliese
+
+2) subscribir and seducir
+- These have the sort of the same issue as sonreír, but on a smaller scale. While these
+irregular-ending types did have their type represented in the training data, specific
+msd's asked for in the .dev predictions were not (because the function that chooses the
+best rule filters by msd). So it resulted in them pulling from rules meant for the 
+general -ir verbs. 
+- Like with desleír, we only added in the msd's that were asked to predict and it fixed it.
+
+reinscribir	V;V.PTCP;PST;FEM;SG	reinscripta
+traducir	V;V.PTCP;PST;MASC;PL	traducidos
+traducir	V;V.PTCP;PST;MASC;SG	traducido
+
+3) prostituir
+- Because the training data contained just as many -guir and -uir verbs, the predictions 
+were pulling from the verbs created by the -guir portion of the training data. This is 
+one of the cases where the grapheme doesn't capture the changes in Spanish, since the 'u' 
+in -guir is not pronounced and is used to make the 'g' a plosive, while in other -uir 
+verbs it is pronounced as a separate vowel from the -ir.
+- Upon looking at the frequency of rules generated, we saw that just one more instance (since
+it was at a tie) of "normal" -uir verbs would have made the difference, since the rule-chosing
+function was originally choosing wrongly at the longest-replacement-suffix stage.
+
+constituir	V;SBJV;PRS;NOM(2,SG,INFM)	constituyás
+constituir	V;SBJV;PRS;NOM(3,PL)	constituyan
+constituir	V;SBJV;PST;LGSPEC2;NOM(1,SG)	constituyese
+constituir	V;SBJV;PST;LGSPEC2;NOM(3,SG)	constituyese
+constituir	V;V.CVB;PRS;ACC(3,PL)	constituyéndose
