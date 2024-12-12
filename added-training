@@ -1,0 +1,20 @@
+Besides the additions to the baseline code, we attempted to show 
+the non-imperative issues with the training data. Some notable
+characteristics about the existing data sets:
+
+  1) There are no overlaps of verbs between the .trn, .dev and .tst sets. 
+This should have prevented any inflation of the prediction accuracy.
+  2) Each verb is presented and tested with around/at least 20 msd forms. 
+This means that a good chunk of the conjugation paradigm is given or predicted. 
+The lines are distributed between the different tense-aspect-moods. 
+(It is unclear what the criteria is for choosing specific msd's for each verb, 
+since they differ between verbs. Part of it is due to the grammatical cases 
+associated with each.)
+  3) The vast majority of the data are -ar verbs. This matches the distribution of 
+ar-er-ir in the actual Spanish language. (The RAE estimate at least 80% of verbs being
+of type -ar.) This leads to a the -er and -ir verbs being really underpresented and some 
+of their special types being unrepresented. 
+  4) No highly irregular verbs are included (eg. ir, ser, estar, tener),
+though verbs that are irregular in ending (eg. subscribir) or stem changes (eg. dispertar)
+do appear. 
+  5) A large amount of the IMP data have an accusative case 
