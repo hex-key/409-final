@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """
+Non-neural system for generating Spanish morphological inflections 
+Authors: Min Bae, Iris Chen, Abby Higgins, Josephine Shih
+
+Based on:
 Non-neural baseline system for the SIGMORPHON 2020 Shared Task 0.
 Author: Mans Hulden
 Modified by: Tiago Pimentel
